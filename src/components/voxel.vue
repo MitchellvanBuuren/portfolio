@@ -55,17 +55,12 @@ export default {
     camera.lookAt(target)
 
 
-    const pointLight1 = new THREE.DirectionalLight(0xFFFFFF, 1)
-    pointLight1.position.set(20, 100, 10)
+    const pointLight1 = new THREE.DirectionalLight(0xFFFFFF, 2)
+    pointLight1.position.set(20, 20, 10)
     pointLight1.target.position.set(target)
     pointLight1.castShadow = true
+    pointLight1.castShadow = true
     scene.add(pointLight1)
-
-
-    const controls = new OrbitControls(camera, renderer.domElement)
-    controls.autoRotate = true
-    controls.target = target
-    scene.add(controls)
 
     const mtlLoader = new MTLLoader()
     mtlLoader.load('/assets/objects/voxel-me.mtl', function (materials) {
@@ -77,6 +72,10 @@ export default {
         scene.add(object)
       })
     });
+
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.autoRotate = true
+    controls.target = target
 
     let frame = 0
     let req = null
@@ -96,7 +95,6 @@ export default {
   created() {
   },
   mounted() {
-
     this.$refs.canvas.replaceWith(this.renderer.domElement)
     this.animate()
   },
@@ -129,6 +127,9 @@ export default {
     easeOut(x) {
       return Math.sqrt(1 - Math.pow(x - 1, 4))
     },
+    getObject(object) {
+      return object
+    }
   },
   computed: {}
 }

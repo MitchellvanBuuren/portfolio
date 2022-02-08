@@ -18,14 +18,11 @@
       </template>
     </v-snackbar>
     <v-app-bar
-        color="background"
+        color="transparent"
+        app
         flat
-        height="100px"
-        :clipped-left="$vuetify.breakpoint.lgAndUp"
+        fixed
     >
-      <v-toolbar-title class="mx-1">
-        <h2><strong>Mitchell van Buuren</strong></h2>
-      </v-toolbar-title>
       <div>
         <v-btn @click="pageToggle('about')" plain v-model="about"  depressed>
           <v-toolbar-title class="mx-2">
@@ -74,15 +71,15 @@
         >
           <v-list-item-group
           >
-            <v-list-item @click="pageToggle('about')" color="secondary">
+            <v-list-item v-model="about" @click="pageToggle('about')" color="secondary">
               <v-list-item-title class="light--text">About</v-list-item-title>
             </v-list-item>
 
-            <v-list-item @click="pageToggle('projects')" color="secondary">
+            <v-list-item v-model="projects" @click="pageToggle('projects')" color="secondary">
               <v-list-item-title>Projects</v-list-item-title>
             </v-list-item>
 
-            <v-list-item @click="pageToggle('references')" color="secondary">
+            <v-list-item v-model="references" @click="pageToggle('references')" color="secondary">
               <v-list-item-title>References</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
