@@ -28,5 +28,9 @@ export default {
   justify-content: center;
 }
 
+.background {
+  background: var(--v-background-base) !important;
+}
+
 </style>
 

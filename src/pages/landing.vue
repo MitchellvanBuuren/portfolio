@@ -1,5 +1,5 @@
 <template>
-  <v-app class="darkBackground">
+  <v-app class="background">
     <v-snackbar
         v-model="showToast"
         top
@@ -56,7 +56,7 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn
               color="background"
-              class="mx-1 coloured-secondary hidden-md-and-up roundedButton mintBackground"
+              class="mx-1 hidden-md-and-up roundedButton mintBackground"
               v-bind="attrs"
               v-on="on"
               icon
@@ -70,6 +70,7 @@
             dense
         >
           <v-list-item-group
+              mandatory
           >
             <v-list-item v-model="about" @click="pageToggle('about')" color="secondary">
               <v-list-item-title class="light--text">About</v-list-item-title>
@@ -77,10 +78,6 @@
 
             <v-list-item v-model="projects" @click="pageToggle('projects')" color="secondary">
               <v-list-item-title>Projects</v-list-item-title>
-            </v-list-item>
-
-            <v-list-item v-model="references" @click="pageToggle('references')" color="secondary">
-              <v-list-item-title>References</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
         </v-list>
@@ -123,7 +120,6 @@ export default {
   data: () => ({
     about: true,
     projects: false,
-    references: false,
     loading: false,
     showToast: false,
     toastText: 'Oh hey! I see you are new here welcome and thank you for visiting my portfolio',
@@ -187,9 +183,7 @@ export default {
   background-color: #15CDCA;
 }
 
-.darkBackground {
-  background: var(--v-background-base) !important;
-}
+
 
 </style>
 

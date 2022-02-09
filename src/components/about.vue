@@ -8,6 +8,14 @@
       <span class="text-body-1">Hello I am a self taught full stack intermediate software developer that specializes in
         progressive web applications.
       </span>
+        <br>
+        <br>
+        <a :href="`${path}resume.pdf`" download="resume.pdf">
+        <v-btn color="primary">
+          <v-icon>mdi-download</v-icon>
+          Resume
+        </v-btn>
+        </a>
       </v-card-text>
       <v-avatar
           class="ma-3"
@@ -15,13 +23,15 @@
       >
         <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
       </v-avatar>
+      <br>
+
     </div>
     <v-card-title>
       <span class="display-1">Bio</span>
     </v-card-title>
     <v-card-text>
       <span class="text-body-1">
-      <strong>1997</strong> - Born in Benoni, South Africa
+      <strong>1997</strong> - Born in Germiston, South Africa
       <br>
       <br>
       <strong>2015</strong> - Matriculated at Ho&euml;rskool Brandwag
@@ -40,7 +50,12 @@
 
 <script>
 export default {
-  name: "about"
+  name: "about",
+  data: () => ({
+    path: process.env.BASE_URL,
+  }),
+  methods: {
+  },
 }
 </script>
 
