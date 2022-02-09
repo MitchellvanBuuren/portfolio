@@ -132,17 +132,14 @@ export default {
         case 'about':
           this.about = true
           this.projects = false
-          this.references = false
           break
         case 'projects':
           this.about = false
           this.projects = true
-          this.references = false
           break
         case 'references':
           this.about = false
           this.projects = false
-          this.references = true
           break
 
       }
