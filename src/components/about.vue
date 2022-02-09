@@ -12,10 +12,10 @@
       </v-avatar>
       <v-card-text>
       <span class="text-body-1">
-        First of all, I love challenges. Ever since I solved my first bug as a junior I knew
+        First of all, I love challenges. Ever since I solved my first bug I knew
         that coding is my passion. I believe that programming transforms the world around us.
         I started out as a junior software engineer. Reading code, attempting bug fixes, failing at bug fixes and adding a
-        button here and there. Slowly building my knowledge base and experience. Fast forward to today. I am a full
+        button here and there. Slowly building my knowledge base and experience. Fast forward to today - I am a full
         stack intermediate software engineer.
       </span>
         <br>
