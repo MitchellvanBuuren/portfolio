@@ -100,9 +100,11 @@
         <v-fade-transition>
           <projects v-show="projects"></projects>
         </v-fade-transition>
-
       </div>
     </v-container>
+    <v-btn x-large icon class="floatBottomRight" fab v-show="scY > 300" @click="toTop">
+      <v-icon>mdi-arrow-up</v-icon>
+    </v-btn>
   </v-app>
 </template>
 
@@ -124,6 +126,8 @@ export default {
     showToast: false,
     toastText: 'Oh hey! I see you are new here welcome and thank you for visiting my portfolio',
     isDark: true,
+    scTimer: 0,
+    scY: 0,
 
   }),
   methods: {
@@ -148,6 +152,20 @@ export default {
       this.isDark = !this.isDark
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
+    handleScroll() {
+      if (this.scTimer) return;
+      this.scTimer = setTimeout(() => {
+        this.scY = window.scrollY;
+        clearTimeout(this.scTimer);
+        this.scTimer = 0;
+      }, 100);
+    },
+    toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    },
   },
   mounted() {
     const value = localStorage.getItem('first')
@@ -155,6 +173,7 @@ export default {
       this.showToast = true;
       localStorage.setItem('first', 'false')
     }
+    window.addEventListener('scroll', this.handleScroll);
   }
 }
 </script>
@@ -176,11 +195,15 @@ export default {
   background-color: #ffcd17;
 }
 
-.mintBackground{
+.mintBackground {
   background-color: #15CDCA;
 }
 
-
+.floatBottomRight {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
 
 </style>
 

@@ -1,0 +1,90 @@
+name: PROD
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+env:
+  PROJECT: 'www.mitchellvanbuuren.dev'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+      SSH_KNOWN_HOSTS: ${{ secrets.PROD_SSH_KNOWN_HOSTS }}
+      SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+      SSH_PORT: ${{ secrets.PROD_SSH_PORT }}
+    steps:
+    - name: Get agent public ip (used in firewall rules)
+      run: curl -s http://ipinfo.io/json
+
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{env.SSH_KEY}}
+        known_hosts: ${{env.SSH_KNOWN_HOSTS}}
+        if_key_exists: ignore
+
+    - uses: actions/checkout@v2
+
+    - name: Install project dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Zip build
+      run: cd dist && zip -r ../dist.zip *; cd ..
+
+    - name: Creating commit directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${SSH_HOST}
+        username: ubuntu
+        key: ${SSH_KEY}
+        port: ${SSH_PORT}
+        envs: PROJECT,GITHUB_SHA
+        script: rm -rf /var/www/${{env.PROJECT}}/${{GITHUB.SHA}} && mkdir -p /var/www/${{env.PROJECT}}/${{GITHUB.SHA}}
+
+    - name: Copy zip to root directory
+      uses: appleboy/scp-action@master
+      with:
+        host: ${SSH_HOST}
+        username: web
+        key: ${SSH_KEY}
+        port: ${SSH_PORT}
+        source: "dist.zip"
+        envs: PROJECT,GITHUB_SHA
+        target: "/var/www/${{env.PROJECT}}"
+
+    - name: Unzipping build into commit directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${SSH_HOST}
+        username: web
+        key: ${SSH_KEY}
+        port: ${SSH_PORT}
+        envs: PROJECT,GITHUB_SHA
+        script: unzip /var/www/${{env.PROJECT}}/dist.zip -d /var/www/${{env.PROJECT}}/${GITHUB_SHA} && rm /var/www/${{env.PROJECT}}/dist.zip
+
+    - name: Link current directory to commit directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${SSH_HOST}
+        username: web
+        key: ${SSH_KEY}
+        port: ${SSH_PORT}
+        envs: PROJECT,GITHUB_SHA
+        script: ln -sfn /var/www/${{env.PROJECT}}/${GITHUB_SHA} /var/www/${{env.PROJECT}}/current
+
+    - name: Cleaning up (only keeping latest 3 releases)
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${SSH_HOST}
+        username: web
+        key: ${SSH_KEY}
+        port: ${SSH_PORT}
+        script: echo 'CURRENT=$(basename $(readlink -f current)); ls -t | grep -v current | grep -v cleanup.sh | grep -v $CURRENT | tail -n +2 | xargs rm -rf' > cleanup.sh && sh cleanup.sh && rm cleanup.sh
