@@ -64,7 +64,7 @@
         Bio
       </v-card-title>
       <v-card-text class="text-body-1">
-        <strong>1997</strong> - Born in Germiston, South Africa.
+        <strong>1997</strong> - Born in Midrand, South Africa.
         <br>
         <br>
         <strong>2015</strong> - Matriculated at Ho&euml;rskool Brandwag.
