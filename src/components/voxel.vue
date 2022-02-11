@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ref="canvas" id="viewport">
+    <div  ref="canvas" id="viewport">
       <v-progress-circular
           indeterminate
           color="secondary"
@@ -33,8 +33,8 @@ export default {
 
     const container = document.getElementById('viewport')
 
-    const scW = 500
-    const scH = 500
+    const scW = 1000
+    const scH = 1000
     const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true})
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.shadowMap.enabled = true
@@ -116,11 +116,11 @@ export default {
       }
 
       const aspectRatio = 1;
-      let boundary = window.innerWidth * 0.5
-      if (boundary > window.innerHeight * 0.5) {
-        boundary = window.innerHeight * 0.5
+      let boundary = window.innerWidth
+      if (boundary > window.innerHeight) {
+        boundary = window.innerHeight
       }
-      this.renderer.setSize(boundary * aspectRatio, boundary / aspectRatio)
+      this.renderer.setSize(boundary * aspectRatio, boundary * aspectRatio)
 
       this.renderer.render(this.scene, this.camera)
     },

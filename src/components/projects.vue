@@ -1,7 +1,7 @@
 <template>
-  <v-card  flat color="background">
+  <v-card flat color="background">
     <v-card-title>
-      <span class="display-1">Work</span>
+      <span class="display-1">Projects</span>
     </v-card-title>
     <v-row>
       <v-col>
@@ -58,7 +58,8 @@
           </v-card-title>
 
           <v-card-subtitle>
-            Uniform is a open source collection of base services.
+            Uniform is a open source collection of base services. A collection of front end platforms (written in VueJs)
+            and backend services (written in Golang).
           </v-card-subtitle>
 
           <v-card-actions>
@@ -171,7 +172,7 @@
 
 <script>
 export default {
-name: "projects",
+  name: "projects",
   data: () => ({
     showFluid: false,
     showUniform: false,

@@ -1,5 +1,13 @@
 <template>
   <v-app class="background">
+    <div>
+      <voxel v-if="!loading" class="absolute-center"></voxel>
+      <v-progress-circular
+          v-if="loading"
+          indeterminate
+          color="primary"
+      ></v-progress-circular>
+    </div>
     <v-snackbar
         v-model="showToast"
         top
@@ -24,12 +32,12 @@
         fixed
     >
       <div>
-        <v-btn @click="pageToggle('about')" plain v-model="about"  depressed>
+        <v-btn @click="scrollTo('about')" plain depressed>
           <v-toolbar-title class="mx-2">
-          <span class="hidden-sm-and-down">About</span>
+            <span class="hidden-sm-and-down">About Me</span>
           </v-toolbar-title>
         </v-btn>
-        <v-btn @click="pageToggle('projects')" plain v-model="projects"  depressed>
+        <v-btn @click="scrollTo('projects')" plain depressed>
           <v-toolbar-title class="mx-2">
             <span class="hidden-sm-and-down">Projects</span>
           </v-toolbar-title>
@@ -70,13 +78,11 @@
             dense
         >
           <v-list-item-group
-              mandatory
           >
-            <v-list-item v-model="about" @click="pageToggle('about')" color="secondary">
-              <v-list-item-title class="light--text">About</v-list-item-title>
+            <v-list-item @click="scrollTo('about')" color="secondary">
+              <v-list-item-title class="light--text">About Me</v-list-item-title>
             </v-list-item>
-
-            <v-list-item v-model="projects" @click="pageToggle('projects')" color="secondary">
+            <v-list-item @click="scrollTo('projects')" color="secondary">
               <v-list-item-title>Projects</v-list-item-title>
             </v-list-item>
           </v-list-item-group>
@@ -87,19 +93,8 @@
     <v-container class="fill-height justify-center" fluid>
 
       <div>
-        <voxel v-if="!loading" class="absolute-center"></voxel>
-        <v-progress-circular
-            v-if="loading"
-            indeterminate
-            color="primary"
-        ></v-progress-circular>
-
-        <v-fade-transition>
-          <about v-show="about"></about>
-        </v-fade-transition>
-        <v-fade-transition>
-          <projects v-show="projects"></projects>
-        </v-fade-transition>
+        <about id="about"></about>
+        <projects id="projects"></projects>
       </div>
     </v-container>
     <v-btn x-large icon class="floatBottomRight" fab v-show="scY > 300" @click="toTop">
@@ -120,8 +115,6 @@ export default {
     About,
   },
   data: () => ({
-    about: true,
-    projects: false,
     loading: false,
     showToast: false,
     toastText: 'Oh hey! I see you are new here welcome and thank you for visiting my portfolio',
@@ -131,21 +124,10 @@ export default {
 
   }),
   methods: {
-    pageToggle(page) {
-      switch (page) {
-        case 'about':
-          this.about = true
-          this.projects = false
-          break
-        case 'projects':
-          this.about = false
-          this.projects = true
-          break
-        case 'references':
-          this.about = false
-          this.projects = false
-          break
-
+    scrollTo(elId) {
+      const el = document.getElementById(elId);
+      if (el) {
+        el.scrollIntoView({behavior: 'smooth'});
       }
     },
     themeToggle() {
@@ -179,13 +161,6 @@ export default {
 </script>
 
 <style lang="scss">
-.lightBackground  {
-  background-color: #F4F3EE;
-}
-
-.lightBackground  {
-  background-color: #212129;
-}
 
 .roundedButton {
   border-radius: 5px !important;
