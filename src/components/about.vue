@@ -90,7 +90,7 @@ export default {
   data: () => ({
     path: process.env.BASE_URL,
     isMobile: false,
-    methodologies: ['Agile', 'Dry/Wet', 'test', 'test'],
+    methodologies: ['Agile', 'Dry/Wet', 'Extreme Programming', 'YAGNI', 'KISS'],
     skillsLists: [
       {
         title: 'Front End',
