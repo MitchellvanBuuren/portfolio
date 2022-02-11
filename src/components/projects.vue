@@ -101,7 +101,7 @@
 
           <v-card-subtitle>
             PayCurve is a financial technology platform, that provides employees with early access to a portion of
-            their earned and unencumbered salary at any point during the month
+            their earned and unencumbered salary at any point during the month.
           </v-card-subtitle>
 
           <v-card-actions>
@@ -140,7 +140,7 @@
           </v-card-title>
 
           <v-card-subtitle>
-            1,000 miles of wonder
+            Eyerys is a customer feedback solution that gathers customer feedback across all comunication channels.
           </v-card-subtitle>
 
           <v-card-actions>
