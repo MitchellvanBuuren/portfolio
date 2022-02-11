@@ -102,18 +102,6 @@ export default {
       }
     ],
   }),
-  created() {
-    window.addEventListener("resize", this.onResize);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.onResize);
-  },
-  methods: {
-    onResize() {
-      this.width = window.innerWidth;
-      this.isMobile = this.width < 600;
-    },
-  }
 }
 </script>
 
