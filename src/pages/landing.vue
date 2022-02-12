@@ -1,13 +1,6 @@
 <template>
   <v-app class="background">
-    <div>
-      <voxel v-if="!loading" class="absolute-center"></voxel>
-      <v-progress-circular
-          v-if="loading"
-          indeterminate
-          color="primary"
-      ></v-progress-circular>
-    </div>
+
     <v-snackbar
         v-model="showToast"
         top
@@ -27,9 +20,9 @@
     </v-snackbar>
     <v-app-bar
         color="transparent"
-        app
         flat
         fixed
+        app
     >
       <div>
         <v-btn @click="scrollTo('about')" plain depressed>
@@ -93,6 +86,12 @@
     <v-container class="fill-height justify-center" fluid>
 
       <div>
+        <voxel v-if="!loading" class="absolute-center fullscreen"></voxel>
+        <v-progress-circular
+            v-if="loading"
+            indeterminate
+            color="primary"
+        ></v-progress-circular>
         <about id="about"></about>
         <projects id="projects"></projects>
       </div>
@@ -178,6 +177,11 @@ export default {
   position: fixed;
   right: 0;
   bottom: 0;
+}
+
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
 }
 
 </style>
