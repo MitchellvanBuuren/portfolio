@@ -10,8 +10,7 @@
             max-width="350"
         >
           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              height="200px"
+              src="../assets/icons/fluid.png"
           ></v-img>
 
           <v-card-title>
@@ -49,8 +48,7 @@
             max-width="350"
         >
           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              height="200px"
+              src="../assets/icons/uniform.png"
           ></v-img>
 
           <v-card-title>
@@ -92,8 +90,7 @@
             max-width="350"
         >
           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              height="200px"
+              src="../assets/icons/paycurve.png"
           ></v-img>
 
           <v-card-title>
@@ -132,8 +129,7 @@
             max-width="350"
         >
           <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              height="200px"
+              src="../assets/icons/eyerys.png"
           ></v-img>
 
           <v-card-title>
@@ -141,7 +137,7 @@
           </v-card-title>
 
           <v-card-subtitle>
-            Eyerys is a customer feedback solution that gathers customer feedback across all comunication channels.
+            Eyerys is a customer feedback solution that gathers customer feedback across all communication channels.
           </v-card-subtitle>
 
           <v-card-actions>

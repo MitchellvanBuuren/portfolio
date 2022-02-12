@@ -33,8 +33,8 @@ export default {
 
     const container = document.getElementById('viewport')
 
-    const scW = 1000
-    const scH = 1000
+    const scW = 500
+    const scH = 500
     const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true})
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.shadowMap.enabled = true

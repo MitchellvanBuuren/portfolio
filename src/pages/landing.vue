@@ -25,14 +25,14 @@
         app
     >
       <div>
-        <v-btn @click="scrollTo('about')" plain depressed>
+        <v-btn class="hidden-sm-and-down" @click="scrollTo('about')" plain depressed>
           <v-toolbar-title class="mx-2">
-            <span class="hidden-sm-and-down">About Me</span>
+            <span >About Me</span>
           </v-toolbar-title>
         </v-btn>
-        <v-btn @click="scrollTo('projects')" plain depressed>
+        <v-btn class="hidden-sm-and-down" @click="scrollTo('projects')" plain depressed>
           <v-toolbar-title class="mx-2">
-            <span class="hidden-sm-and-down">Projects</span>
+            <span >Projects</span>
           </v-toolbar-title>
         </v-btn>
       </div>
