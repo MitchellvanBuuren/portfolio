@@ -27,7 +27,7 @@
       <div>
         <v-btn class="hidden-sm-and-down" @click="scrollTo('about')" plain depressed>
           <v-toolbar-title class="mx-2">
-            <span >About Me</span>
+            <span >About</span>
           </v-toolbar-title>
         </v-btn>
         <v-btn class="hidden-sm-and-down" @click="scrollTo('projects')" plain depressed>
@@ -73,7 +73,7 @@
           <v-list-item-group
           >
             <v-list-item @click="scrollTo('about')" color="secondary">
-              <v-list-item-title class="light--text">About Me</v-list-item-title>
+              <v-list-item-title class="light--text">About</v-list-item-title>
             </v-list-item>
             <v-list-item @click="scrollTo('projects')" color="secondary">
               <v-list-item-title>Projects</v-list-item-title>

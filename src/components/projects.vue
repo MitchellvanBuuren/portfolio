@@ -14,12 +14,23 @@
           ></v-img>
 
           <v-card-title>
-            Fluid
+            <span>Fluid</span>
+            <v-spacer class="mx-auto"></v-spacer>
+            <v-btn href="https://fluid.uprate.co.za/" target="_blank" color="primary" icon>
+              <v-icon>mdi-web</v-icon>
+            </v-btn>
+            <v-btn href="https://github.com/legacy-fluid" target="_blank" color="primary" icon>
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
           </v-card-title>
 
-          <v-card-subtitle>
-            Fluid is a open source API generator.
-          </v-card-subtitle>
+          <v-expand-transition>
+            <div v-show="showFluid">
+              <v-card-subtitle>
+                Fluid is a open source API generator.
+              </v-card-subtitle>
+            </div>
+          </v-expand-transition>
 
           <v-card-actions>
             <v-btn
@@ -30,16 +41,6 @@
               <v-icon>{{ showFluid ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="showFluid">
-              <v-divider></v-divider>
-
-              <v-card-text>
-
-              </v-card-text>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-col>
       <v-col>
@@ -52,13 +53,20 @@
           ></v-img>
 
           <v-card-title>
-            Uniform
+            <span>Uniform</span>
+            <v-spacer class="mx-auto"></v-spacer>
+            <v-btn href="https://github.com/go-uniform" target="_blank" color="primary" icon>
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
           </v-card-title>
 
-          <v-card-subtitle>
-            Uniform is a open source collection of base services. A collection of front end platforms (written in VueJs)
-            and backend services (written in Golang).
-          </v-card-subtitle>
+          <v-expand-transition>
+            <div v-show="showUniform">
+              <v-card-subtitle>
+                Uniform is a open source collection of base services.
+              </v-card-subtitle>
+            </div>
+          </v-expand-transition>
 
           <v-card-actions>
             <v-btn
@@ -69,16 +77,6 @@
               <v-icon>{{ showUniform ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="showUniform">
-              <v-divider></v-divider>
-
-              <v-card-text>
-
-              </v-card-text>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-col>
 
@@ -94,13 +92,21 @@
           ></v-img>
 
           <v-card-title>
-            Paycurve
+            <span>Paycurve</span>
+            <v-spacer class="mx-auto"></v-spacer>
+            <v-btn href="https://www.paycurve.co.za/" target="_blank" color="primary" icon>
+              <v-icon>mdi-web</v-icon>
+            </v-btn>
           </v-card-title>
 
-          <v-card-subtitle>
-            PayCurve is a financial technology platform, that provides employees with early access to a portion of
-            their earned and unencumbered salary at any point during the month.
-          </v-card-subtitle>
+          <v-expand-transition>
+            <div v-show="showPaycuve">
+              <v-card-subtitle>
+                PayCurve is a financial technology platform, that provides employees with early access to a portion of
+                their earned and unencumbered salary at any point during the month.
+              </v-card-subtitle>
+            </div>
+          </v-expand-transition>
 
           <v-card-actions>
             <v-btn
@@ -111,16 +117,6 @@
               <v-icon>{{ showPaycuve ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="showPaycuve">
-              <v-divider></v-divider>
-
-              <v-card-text>
-
-              </v-card-text>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-col>
       <v-col>
@@ -133,12 +129,20 @@
           ></v-img>
 
           <v-card-title>
-            Eyerys
+            <span>Eyerys</span>
+            <v-spacer class="mx-auto"></v-spacer>
+            <v-btn href="https://www.smokeci.com/product/eyerys" target="_blank" color="primary" icon>
+              <v-icon>mdi-web</v-icon>
+            </v-btn>
           </v-card-title>
 
-          <v-card-subtitle>
-            Eyerys is a customer feedback solution that gathers customer feedback across all communication channels.
-          </v-card-subtitle>
+          <v-expand-transition>
+            <div v-show="showEyerys">
+              <v-card-subtitle>
+                Eyerys is a customer feedback solution that gathers customer feedback across all communication channels.
+              </v-card-subtitle>
+            </div>
+          </v-expand-transition>
 
           <v-card-actions>
             <v-btn
@@ -149,16 +153,6 @@
               <v-icon>{{ showEyerys ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
           </v-card-actions>
-
-          <v-expand-transition>
-            <div v-show="showEyerys">
-              <v-divider></v-divider>
-
-              <v-card-text>
-
-              </v-card-text>
-            </div>
-          </v-expand-transition>
         </v-card>
       </v-col>
     </v-row>
