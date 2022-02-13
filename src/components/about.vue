@@ -18,6 +18,9 @@
             adding a button here and there. Slowly building my knowledge base and experience. Fast forward to today - I
             am
             a full stack intermediate software engineer capable of transforming the world one line at a time.
+            <br>
+            <br>
+            My hopes for this site is that it grows as I grow as a software engineer.
           </v-card-text>
         </v-col>
       </v-row>

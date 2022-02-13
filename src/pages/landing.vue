@@ -2,6 +2,7 @@
   <v-app class="background">
     <v-snackbar
         v-model="showToast"
+        timeout="0"
         top
     >
       {{ toastText }}
