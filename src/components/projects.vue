@@ -25,22 +25,12 @@
           </v-card-title>
 
           <v-expand-transition>
-            <div v-show="showFluid">
+            <div>
               <v-card-subtitle>
                 Fluid is a open source API generator.
               </v-card-subtitle>
             </div>
           </v-expand-transition>
-
-          <v-card-actions>
-            <v-btn
-                icon
-                class="mx-auto"
-                @click="showFluid = !showFluid"
-            >
-              <v-icon>{{ showFluid ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
       <v-col>
@@ -61,22 +51,12 @@
           </v-card-title>
 
           <v-expand-transition>
-            <div v-show="showUniform">
+            <div>
               <v-card-subtitle>
                 Uniform is a open source collection of base services.
               </v-card-subtitle>
             </div>
           </v-expand-transition>
-
-          <v-card-actions>
-            <v-btn
-                icon
-                class="mx-auto"
-                @click="showUniform = !showUniform"
-            >
-              <v-icon>{{ showUniform ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
 
@@ -100,23 +80,13 @@
           </v-card-title>
 
           <v-expand-transition>
-            <div v-show="showPaycuve">
+            <div>
               <v-card-subtitle>
                 PayCurve is a financial technology platform, that provides employees with early access to a portion of
                 their earned and unencumbered salary at any point during the month.
               </v-card-subtitle>
             </div>
           </v-expand-transition>
-
-          <v-card-actions>
-            <v-btn
-                icon
-                class="mx-auto"
-                @click="showPaycuve = !showPaycuve"
-            >
-              <v-icon>{{ showPaycuve ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
       <v-col>
@@ -137,22 +107,12 @@
           </v-card-title>
 
           <v-expand-transition>
-            <div v-show="showEyerys">
+            <div>
               <v-card-subtitle>
                 Eyerys is a customer feedback solution that gathers customer feedback across all communication channels.
               </v-card-subtitle>
             </div>
           </v-expand-transition>
-
-          <v-card-actions>
-            <v-btn
-                icon
-                class="mx-auto"
-                @click="showEyerys = !showEyerys"
-            >
-              <v-icon>{{ showEyerys ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-            </v-btn>
-          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -164,10 +124,7 @@
 export default {
   name: "projects",
   data: () => ({
-    showFluid: false,
-    showUniform: false,
-    showPaycuve: false,
-    showEyerys: false,
+
   }),
 }
 </script>

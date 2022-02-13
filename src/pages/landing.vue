@@ -1,6 +1,5 @@
 <template>
   <v-app class="background">
-
     <v-snackbar
         v-model="showToast"
         top
@@ -19,26 +18,55 @@
       </template>
     </v-snackbar>
     <v-app-bar
-        color="transparent"
+        color="background"
         flat
         fixed
         app
     >
       <div>
-        <v-btn class="hidden-sm-and-down" @click="scrollTo('about')" plain depressed>
+        <v-btn
+            class="hidden-sm-and-down"
+            @click="scrollTo('about')"
+            plain
+            depressed
+        >
           <v-toolbar-title class="mx-2">
-            <span >About</span>
+            <span>About</span>
           </v-toolbar-title>
         </v-btn>
         <v-btn class="hidden-sm-and-down" @click="scrollTo('projects')" plain depressed>
           <v-toolbar-title class="mx-2">
-            <span >Projects</span>
+            <span>Projects</span>
           </v-toolbar-title>
         </v-btn>
       </div>
 
       <v-spacer class="mx-auto"></v-spacer>
 
+      <v-btn
+          color="primary"
+          icon
+          href="https://github.com/MitchellvanBuuren/portfolio"
+          target="_blank"
+      >
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
+      <v-btn
+          color="primary"
+          href="mailto:mitchell.vanbuuren@gmail.com"
+          icon
+          target="_blank"
+      >
+        <v-icon>mdi-email</v-icon>
+      </v-btn>
+      <v-btn
+          color="primary"
+          icon
+          href="https://linkedin.com/in/mitchelln7"
+          target="_blank"
+      >
+        <v-icon>mdi-linkedin</v-icon>
+      </v-btn>
       <v-btn
           color="background"
           class="roundedButton"
@@ -72,7 +100,10 @@
         >
           <v-list-item-group
           >
-            <v-list-item @click="scrollTo('about')" color="secondary">
+            <v-list-item
+                @click="scrollTo('about')"
+                color="secondary"
+            >
               <v-list-item-title class="light--text">About</v-list-item-title>
             </v-list-item>
             <v-list-item @click="scrollTo('projects')" color="secondary">
@@ -82,23 +113,22 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-
     <v-container class="fill-height justify-center" fluid>
-
       <div>
-        <voxel v-if="!loading" class="absolute-center fullscreen"></voxel>
-        <v-progress-circular
-            v-if="loading"
-            indeterminate
-            color="primary"
-        ></v-progress-circular>
+        <voxel class="absolute-center fullscreen"></voxel>
+        <br>
         <about id="about"></about>
+        <br>
         <projects id="projects"></projects>
+        <br>
       </div>
     </v-container>
     <v-btn x-large icon class="floatBottomRight" fab v-show="scY > 300" @click="toTop">
       <v-icon>mdi-arrow-up</v-icon>
     </v-btn>
+    <v-footer>
+
+    </v-footer>
   </v-app>
 </template>
 
@@ -107,6 +137,7 @@ import Voxel from "@/components/voxel";
 import About from "@/components/about"
 import Projects from "@/components/projects";
 
+
 export default {
   components: {
     Projects,
@@ -114,7 +145,6 @@ export default {
     About,
   },
   data: () => ({
-    loading: false,
     showToast: false,
     toastText: 'Oh hey! I see you are new here welcome and thank you for visiting my portfolio',
     isDark: true,

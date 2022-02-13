@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div  ref="canvas" id="viewport">
+    <div ref="canvas" id="viewport">
       <v-progress-circular
           indeterminate
           color="secondary"
