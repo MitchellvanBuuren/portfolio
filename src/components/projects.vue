@@ -7,7 +7,7 @@
       <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
-            max-width="500"
+            max-width="700"
         >
           <v-img
               src="../assets/icons/fluid.png"
@@ -36,7 +36,7 @@
       <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
-            max-width="500"
+            max-width="700"
         >
           <v-img
               src="../assets/icons/uniform.png"
@@ -59,13 +59,12 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-
     </v-row>
     <v-row>
       <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
-            max-width="500"
+            max-width="700"
         >
           <v-img
               src="../assets/icons/paycurve.png"
@@ -92,7 +91,7 @@
       <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
-            max-width="500"
+            max-width="700"
         >
           <v-img
               src="../assets/icons/eyerys.png"
