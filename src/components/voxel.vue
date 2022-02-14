@@ -7,7 +7,7 @@
       ></v-progress-circular>
     </div>
     <v-card flat color="background">
-      <v-card-title class="display-2 justify-center">
+      <v-card-title :class="{'display-1': $vuetify.breakpoint.smAndDown, 'display-2': $vuetify.breakpoint.mdAndUp}" class="display-2 justify-center">
         Mitchell van Buuren
       </v-card-title>
       <v-divider class="horizontalDivider"></v-divider>
