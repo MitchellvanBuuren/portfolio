@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-card rounded flat color="background">
-      <v-card-title class="display-1">
+    <v-card flat color="background">
+      <v-card-title class="display-1 justify-center">
         Mitchell van Buuren
       </v-card-title>
       <v-row class="mx-auto">
@@ -24,7 +24,7 @@
           </v-card-text>
         </v-col>
       </v-row>
-      <v-card-title class="display-1">
+      <v-card-title class="display-1 justify-center">
         Skills
       </v-card-title>
       <v-card-text>

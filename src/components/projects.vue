@@ -1,7 +1,7 @@
 <template>
   <v-card flat color="background">
-    <v-card-title>
-      <span class="display-1">Projects</span>
+    <v-card-title class="display-1 justify-center">
+      Projects
     </v-card-title>
     <v-row>
       <v-col>
@@ -123,9 +123,7 @@
 <script>
 export default {
   name: "projects",
-  data: () => ({
-
-  }),
+  data: () => ({}),
 }
 </script>
 
