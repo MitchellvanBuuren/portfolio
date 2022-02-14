@@ -71,7 +71,7 @@
       <v-btn
           color="background"
           class="roundedButton"
-          v-bind:class="{ yellowBackground: !isDark, mintBackground: isDark } "
+          v-bind:class="{ mintBackground: isDark, yellowBackground: !isDark } "
           @click="themeToggle"
           icon
       >
@@ -118,9 +118,9 @@
       <div>
         <voxel class="absolute-center fullscreen"></voxel>
         <br>
-        <about id="about"></about>
+        <about class="absolute-center" id="about"></about>
         <br>
-        <projects id="projects"></projects>
+        <projects class="absolute-center" id="projects"></projects>
         <br>
       </div>
     </v-container>
@@ -148,7 +148,7 @@ export default {
   data: () => ({
     showToast: false,
     toastText: 'Oh hey! I see you are new here welcome and thank you for visiting my portfolio',
-    isDark: true,
+    isDark: false,
     scTimer: 0,
     scY: 0,
 
