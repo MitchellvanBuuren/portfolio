@@ -12,8 +12,8 @@
         </v-col>
         <v-col md="9" cols="12">
           <v-card-text class="text-body-2">
-            Ever since I solved my first bug I knew
-            that coding is my passion. I believe that programming transforms the world around us.
+            Challenge driven software engineer with a passion for efficiency. I believe that programming transforms the
+            world around us.
             I started out as a junior software engineer. Reading code, attempting bug fixes, failing and
             adding a button here and there. Slowly building my knowledge base and experience. Fast forward to today - I
             am
