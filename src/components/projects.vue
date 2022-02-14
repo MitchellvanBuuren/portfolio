@@ -4,7 +4,7 @@
       Projects
     </v-card-title>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
             max-width="500"
@@ -33,7 +33,7 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
             max-width="500"
@@ -62,7 +62,7 @@
 
     </v-row>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
             max-width="500"
@@ -89,7 +89,7 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card
             class="mx-auto"
             max-width="500"
