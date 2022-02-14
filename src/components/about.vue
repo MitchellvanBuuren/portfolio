@@ -20,7 +20,7 @@
             a full stack intermediate software engineer capable of transforming the world one line at a time.
             <br>
             <br>
-            My hopes for this site is that it grows as I grow as a software engineer.
+            My hopes for this site is that it grows as I grow in knowledge and experience as a software engineer.
           </v-card-text>
         </v-col>
       </v-row>
