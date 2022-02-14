@@ -6,6 +6,15 @@
           color="secondary"
       ></v-progress-circular>
     </div>
+    <v-card flat color="background">
+      <v-card-title class="display-2 justify-center">
+        Mitchell van Buuren
+      </v-card-title>
+      <v-divider class="horizontalDivider"></v-divider>
+      <v-card-title class="text-center">
+        Challenge driven software engineer with a passion for efficiency
+      </v-card-title>
+    </v-card>
   </div>
 </template>
 
@@ -116,9 +125,9 @@ export default {
       }
 
       const aspectRatio = 1;
-      let boundary = window.innerWidth
-      if (boundary > window.innerHeight) {
-        boundary = window.innerHeight
+      let boundary = window.innerWidth * 0.5
+      if (boundary > window.innerHeight * 0.5) {
+        boundary = window.innerHeight * 0.5
       }
       this.renderer.setSize(boundary * aspectRatio, boundary * aspectRatio)
 
@@ -136,7 +145,13 @@ export default {
 </script>
 
 <style>
-
+.horizontalDivider {
+  max-width: 250px;
+  border-width: 4px !important;
+  border-radius: 4px !important;
+  margin: auto;
+  background-color: #15CDCA;
+}
 </style>
 
 

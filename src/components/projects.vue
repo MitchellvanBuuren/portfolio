@@ -4,15 +4,14 @@
       Projects
     </v-card-title>
     <v-row>
-      <v-col cols="12" md="6">
+      <v-col>
         <v-card
             class="mx-auto"
-            max-width="700"
+            max-width="400"
         >
-          <v-img
+          <v-img class="mx-auto" width="200"
               src="../assets/icons/fluid.png"
           ></v-img>
-
           <v-card-title>
             <span>Fluid</span>
             <v-spacer class="mx-auto"></v-spacer>
@@ -23,7 +22,6 @@
               <v-icon>mdi-github</v-icon>
             </v-btn>
           </v-card-title>
-
           <v-expand-transition>
             <div>
               <v-card-subtitle>
@@ -33,15 +31,16 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col>
         <v-card
             class="mx-auto"
-            max-width="700"
+            max-width="400"
         >
           <v-img
+              width="200"
+              class="mx-auto"
               src="../assets/icons/uniform.png"
           ></v-img>
-
           <v-card-title>
             <span>Uniform</span>
             <v-spacer class="mx-auto"></v-spacer>
@@ -49,7 +48,6 @@
               <v-icon>mdi-github</v-icon>
             </v-btn>
           </v-card-title>
-
           <v-expand-transition>
             <div>
               <v-card-subtitle>
@@ -59,14 +57,14 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12" md="6">
+      <v-col>
         <v-card
             class="mx-auto"
-            max-width="700"
+            max-width="400"
         >
           <v-img
+              width="200"
+              class="mx-auto"
               src="../assets/icons/paycurve.png"
           ></v-img>
 
@@ -88,14 +86,18 @@
           </v-expand-transition>
         </v-card>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col>
         <v-card
             class="mx-auto"
-            max-width="700"
+            max-width="400"
         >
+          <v-responsive :aspect-ratio="16/9">
           <v-img
+              width="200"
+              class="mx-auto"
               src="../assets/icons/eyerys.png"
           ></v-img>
+          </v-responsive>
 
           <v-card-title>
             <span>Eyerys</span>

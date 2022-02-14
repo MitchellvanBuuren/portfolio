@@ -1,9 +1,6 @@
 <template>
   <div>
     <v-card flat color="background">
-      <v-card-title class="display-1 justify-center">
-        Mitchell van Buuren
-      </v-card-title>
       <v-row class="mx-auto">
         <v-col class="absolute-center" md="3" cols="12">
           <v-avatar size="200px">
@@ -11,8 +8,8 @@
           </v-avatar>
         </v-col>
         <v-col md="9" cols="12">
-          <v-card-text class="text-body-2">
-            Challenge driven software engineer with a passion for efficiency. I believe that programming transforms the
+          <v-card-text class="text-body-1">
+             I believe that programming transforms the
             world around us.
             I started out as a junior software engineer. Reading code, attempting bug fixes, failing and
             adding a button here and there. Slowly building my knowledge base and experience. Fast forward to today - I
